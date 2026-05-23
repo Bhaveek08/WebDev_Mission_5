@@ -4,10 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chatbot-messages');
     const minimizeBtn = document.getElementById('minimize-bot');
     const chatbot = document.getElementById('chatbot');
+    const avatarContainer = document.getElementById('assistant-avatar-container');
 
     // Minimize toggle
     minimizeBtn.addEventListener('click', () => {
         chatbot.classList.toggle('minimized');
+        if (avatarContainer) {
+            avatarContainer.classList.toggle('minimized');
+        }
         if (chatbot.classList.contains('minimized')) {
             minimizeBtn.textContent = '+';
         } else {
